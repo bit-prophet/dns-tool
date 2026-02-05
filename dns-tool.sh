@@ -43,8 +43,8 @@ DNS_SERVERS[6_primary]="178.22.122.100"
 DNS_SERVERS[6_secondary]="185.51.200.2"
 
 DNS_SERVERS[7_name]="Shecan Pro"
-DNS_SERVERS[7_primary]="178.22.122.100"
-DNS_SERVERS[7_secondary]="185.51.200.2"
+DNS_SERVERS[7_primary]="178.22.122.101"
+DNS_SERVERS[7_secondary]="185.51.200.1"
 
 # Function to display menu
 show_menu() {

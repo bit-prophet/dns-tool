@@ -27,7 +27,7 @@ A powerful, interactive bash script to easily configure DNS servers on Linux sys
 | 4 | Quad9 | 9.9.9.9 | 149.112.112.112 |
 | 5 | AdGuard | 94.140.14.14 | 94.140.15.15 |
 | 6 | Shecan Free | 178.22.122.100 | 185.51.200.2 |
-| 7 | Shecan Pro | 178.22.122.100 | 185.51.200.2 |
+| 7 | Shecan Pro | 178.22.122.101 | 185.51.200.1 |
 | 8 | Automatic | System Default | System Default |
 
 ## Installation
@@ -121,7 +121,7 @@ Testing OpenDNS (208.67.222.222)... 22ms
 Testing Quad9 (9.9.9.9)... 20ms
 Testing AdGuard (94.140.14.14)... 25ms
 Testing Shecan Free (178.22.122.100)... 24ms
-Testing Shecan Pro (178.22.122.100)... 25ms
+Testing Shecan Pro (178.22.122.101)... 25ms
 
 ==========================================
   Test Results Summary
@@ -135,7 +135,7 @@ Quad9               9.9.9.9             20ms
 OpenDNS             208.67.222.222      22ms
 Shecan Free         178.22.122.100      24ms
 AdGuard             94.140.14.14        25ms
-Shecan Pro          178.22.122.100      25ms
+Shecan Pro          178.22.122.101      25ms
 
 Best DNS Server: Cloudflare (1.1.1.1)
 Response Time: 15ms
