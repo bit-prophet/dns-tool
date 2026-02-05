@@ -86,6 +86,7 @@ You'll see an interactive menu:
 ==========================================
 
 Please select a DNS server:
+  0) Test all DNS servers (choose best)
   1) Google
   2) Cloudflare
   3) OpenDNS
@@ -94,14 +95,13 @@ Please select a DNS server:
   6) Shecan Free
   7) Shecan Pro
   8) Automatic (None)
-  9) Test all DNS servers (choose best)
 
-Enter your choice (1-9):
+Enter your choice (0-8):
 ```
 
 ### Test All DNS Servers
 
-Choose option **9** to test all DNS servers. The script will:
+Choose option **0** to test all DNS servers. The script will:
 1. Test each DNS server by querying google.com
 2. Measure response times
 3. Display results sorted by speed

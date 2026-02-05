@@ -54,6 +54,7 @@ show_menu() {
     echo "=========================================="
     echo ""
     echo "Please select a DNS server:"
+    echo "  0) Test all DNS servers (choose best)"
     echo "  1) Google"
     echo "  2) Cloudflare"
     echo "  3) OpenDNS"
@@ -62,7 +63,6 @@ show_menu() {
     echo "  6) Shecan Free"
     echo "  7) Shecan Pro"
     echo "  8) Automatic (None)"
-    echo "  9) Test all DNS servers (choose best)"
     echo ""
 }
 
@@ -516,9 +516,13 @@ fi
 
 # Main script
 show_menu
-read -p "Enter your choice (1-9): " choice
+read -p "Enter your choice (0-8): " choice
 
 case $choice in
+    0)
+        test_all_dns
+        exit 0
+        ;;
     1)
         set_dns "${DNS_SERVERS[1_primary]}" "${DNS_SERVERS[1_secondary]}" "${DNS_SERVERS[1_name]}"
         ;;
@@ -543,12 +547,8 @@ case $choice in
     8)
         set_dns "" "" "Automatic"
         ;;
-    9)
-        test_all_dns
-        exit 0
-        ;;
     *)
-        echo -e "${RED}Invalid choice. Please select a number between 1 and 9.${NC}"
+        echo -e "${RED}Invalid choice. Please select a number between 0 and 8.${NC}"
         exit 1
         ;;
 esac
