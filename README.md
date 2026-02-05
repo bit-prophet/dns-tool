@@ -7,12 +7,18 @@ A powerful, interactive bash script to easily configure DNS servers on Linux sys
 - 🎯 **Interactive Menu**: Easy-to-use menu interface
 - ⚡ **DNS Testing**: Test all DNS servers and find the fastest one
 - 🔧 **Multiple DNS Options**: 
-  - Shecan Free & Pro
   - Google DNS
   - Cloudflare DNS
-  - Quad9 (Security-focused)
   - OpenDNS
+  - Quad9 (Security-focused)
   - AdGuard (Ad-blocking)
+  - Shecan Free & Pro
+  - Comodo Secure DNS
+  - CleanBrowsing Family (Family filter)
+  - Verisign
+  - Yandex DNS
+  - Level3
+  - DNS.WATCH
   - Automatic (System Default)
 - 🚀 **Auto-Detection**: Automatically detects and uses systemd-resolved, NetworkManager, or direct resolv.conf
 - ✅ **Smart Testing**: Tests DNS servers by querying google.com and measures response time
@@ -28,7 +34,13 @@ A powerful, interactive bash script to easily configure DNS servers on Linux sys
 | 5 | AdGuard | 94.140.14.14 | 94.140.15.15 |
 | 6 | Shecan Free | 178.22.122.100 | 185.51.200.2 |
 | 7 | Shecan Pro | 178.22.122.101 | 185.51.200.1 |
-| 8 | Automatic | System Default | System Default |
+| 8 | Comodo Secure DNS | 8.26.56.26 | 8.20.247.20 |
+| 9 | CleanBrowsing Family | 185.228.168.9 | 185.228.169.9 |
+| 10 | Verisign | 64.6.64.6 | 64.6.65.6 |
+| 11 | Yandex DNS | 77.88.8.8 | 77.88.8.1 |
+| 12 | Level3 | 4.2.2.1 | 4.2.2.2 |
+| 13 | DNS.WATCH | 84.200.69.80 | 84.200.70.40 |
+| 14 | Automatic | System Default | System Default |
 
 ## Installation
 
@@ -94,9 +106,15 @@ Please select a DNS server:
   5) AdGuard
   6) Shecan Free
   7) Shecan Pro
-  8) Automatic (None)
+  8) Comodo Secure DNS
+  9) CleanBrowsing Family
+ 10) Verisign
+ 11) Yandex DNS
+ 12) Level3
+ 13) DNS.WATCH
+ 14) Automatic (None)
 
-Enter your choice (0-8):
+Enter your choice (0-14):
 ```
 
 ### Test All DNS Servers
@@ -122,6 +140,12 @@ Testing Quad9 (9.9.9.9)... 20ms
 Testing AdGuard (94.140.14.14)... 25ms
 Testing Shecan Free (178.22.122.100)... 24ms
 Testing Shecan Pro (178.22.122.101)... 25ms
+Testing Comodo Secure DNS (8.26.56.26)... 28ms
+Testing CleanBrowsing Family (185.228.168.9)... 30ms
+Testing Verisign (64.6.64.6)... 19ms
+Testing Yandex DNS (77.88.8.8)... 35ms
+Testing Level3 (4.2.2.1)... 21ms
+Testing DNS.WATCH (84.200.69.80)... 27ms
 
 ==========================================
   Test Results Summary
@@ -131,11 +155,17 @@ DNS Server          IP Address           Response Time
 ------------------------------------------------------------
 Cloudflare          1.1.1.1             15ms ⭐
 Google              8.8.8.8             18ms
+Verisign            64.6.64.6           19ms
 Quad9               9.9.9.9             20ms
+Level3              4.2.2.1             21ms
 OpenDNS             208.67.222.222      22ms
 Shecan Free         178.22.122.100      24ms
 AdGuard             94.140.14.14        25ms
 Shecan Pro          178.22.122.101      25ms
+DNS.WATCH           84.200.69.80        27ms
+Comodo Secure DNS   8.26.56.26          28ms
+CleanBrowsing Family 185.228.168.9       30ms
+Yandex DNS          77.88.8.8           35ms
 
 Best DNS Server: Cloudflare (1.1.1.1)
 Response Time: 15ms

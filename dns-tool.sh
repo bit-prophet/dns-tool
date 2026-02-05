@@ -46,6 +46,30 @@ DNS_SERVERS[7_name]="Shecan Pro"
 DNS_SERVERS[7_primary]="178.22.122.101"
 DNS_SERVERS[7_secondary]="185.51.200.1"
 
+DNS_SERVERS[8_name]="Comodo Secure DNS"
+DNS_SERVERS[8_primary]="8.26.56.26"
+DNS_SERVERS[8_secondary]="8.20.247.20"
+
+DNS_SERVERS[9_name]="CleanBrowsing Family"
+DNS_SERVERS[9_primary]="185.228.168.9"
+DNS_SERVERS[9_secondary]="185.228.169.9"
+
+DNS_SERVERS[10_name]="Verisign"
+DNS_SERVERS[10_primary]="64.6.64.6"
+DNS_SERVERS[10_secondary]="64.6.65.6"
+
+DNS_SERVERS[11_name]="Yandex DNS"
+DNS_SERVERS[11_primary]="77.88.8.8"
+DNS_SERVERS[11_secondary]="77.88.8.1"
+
+DNS_SERVERS[12_name]="Level3"
+DNS_SERVERS[12_primary]="4.2.2.1"
+DNS_SERVERS[12_secondary]="4.2.2.2"
+
+DNS_SERVERS[13_name]="DNS.WATCH"
+DNS_SERVERS[13_primary]="84.200.69.80"
+DNS_SERVERS[13_secondary]="84.200.70.40"
+
 # Function to display menu
 show_menu() {
     clear
@@ -62,7 +86,13 @@ show_menu() {
     echo "  5) AdGuard"
     echo "  6) Shecan Free"
     echo "  7) Shecan Pro"
-    echo "  8) Automatic (None)"
+    echo "  8) Comodo Secure DNS"
+    echo "  9) CleanBrowsing Family"
+    echo " 10) Verisign"
+    echo " 11) Yandex DNS"
+    echo " 12) Level3"
+    echo " 13) DNS.WATCH"
+    echo " 14) Automatic (None)"
     echo ""
 }
 
@@ -387,8 +417,8 @@ test_all_dns() {
     local best_name=""
     local results=()
     
-    # Test each DNS server (options 1-7)
-    for i in 1 2 3 4 5 6 7; do
+    # Test each DNS server (options 1-13)
+    for i in 1 2 3 4 5 6 7 8 9 10 11 12 13; do
         local dns_name="${DNS_SERVERS[${i}_name]}"
         local dns_primary="${DNS_SERVERS[${i}_primary]}"
         
@@ -516,7 +546,7 @@ fi
 
 # Main script
 show_menu
-read -p "Enter your choice (0-8): " choice
+read -p "Enter your choice (0-14): " choice
 
 case $choice in
     0)
@@ -545,10 +575,28 @@ case $choice in
         set_dns "${DNS_SERVERS[7_primary]}" "${DNS_SERVERS[7_secondary]}" "${DNS_SERVERS[7_name]}"
         ;;
     8)
+        set_dns "${DNS_SERVERS[8_primary]}" "${DNS_SERVERS[8_secondary]}" "${DNS_SERVERS[8_name]}"
+        ;;
+    9)
+        set_dns "${DNS_SERVERS[9_primary]}" "${DNS_SERVERS[9_secondary]}" "${DNS_SERVERS[9_name]}"
+        ;;
+    10)
+        set_dns "${DNS_SERVERS[10_primary]}" "${DNS_SERVERS[10_secondary]}" "${DNS_SERVERS[10_name]}"
+        ;;
+    11)
+        set_dns "${DNS_SERVERS[11_primary]}" "${DNS_SERVERS[11_secondary]}" "${DNS_SERVERS[11_name]}"
+        ;;
+    12)
+        set_dns "${DNS_SERVERS[12_primary]}" "${DNS_SERVERS[12_secondary]}" "${DNS_SERVERS[12_name]}"
+        ;;
+    13)
+        set_dns "${DNS_SERVERS[13_primary]}" "${DNS_SERVERS[13_secondary]}" "${DNS_SERVERS[13_name]}"
+        ;;
+    14)
         set_dns "" "" "Automatic"
         ;;
     *)
-        echo -e "${RED}Invalid choice. Please select a number between 0 and 8.${NC}"
+        echo -e "${RED}Invalid choice. Please select a number between 0 and 14.${NC}"
         exit 1
         ;;
 esac
